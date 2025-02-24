@@ -1,0 +1,15 @@
+C:\Users\MiHa0_o\source\repos\RDK\les\bin\Debug\net9.0\lab9.exe
+C:\Users\MiHa0_o\source\repos\RDK\les\bin\Debug\net9.0\lab9.deps.json
+C:\Users\MiHa0_o\source\repos\RDK\les\bin\Debug\net9.0\lab9.runtimeconfig.json
+C:\Users\MiHa0_o\source\repos\RDK\les\bin\Debug\net9.0\lab9.dll
+C:\Users\MiHa0_o\source\repos\RDK\les\bin\Debug\net9.0\lab9.pdb
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.AssemblyInfoInputs.cache
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.AssemblyInfo.cs
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.csproj.CoreCompileInputs.cache
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.sourcelink.json
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.dll
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\refint\lab9.dll
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.pdb
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\lab9.genruntimeconfig.cache
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\ref\lab9.dll

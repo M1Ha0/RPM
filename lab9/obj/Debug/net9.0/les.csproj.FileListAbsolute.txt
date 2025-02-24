@@ -1,0 +1,5 @@
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\les.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\les.AssemblyInfoInputs.cache
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\les.AssemblyInfo.cs
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\les.csproj.CoreCompileInputs.cache
+C:\Users\MiHa0_o\source\repos\RDK\les\obj\Debug\net9.0\les.sourcelink.json
