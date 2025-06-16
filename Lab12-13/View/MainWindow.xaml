@@ -1,0 +1,170 @@
+﻿<Window x:Class="Lab12_13.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab12_13"
+        xmlns:conv="clr-namespace:Lab12_13.Converters"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="Лабораторная работа 12,13" Height="450" Width="800"
+        MaxHeight="450" MaxWidth="800">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="lab12">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="3">Лабораторная работа 12</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="9*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <ToolBar>
+                                <Button Command="{Binding OpenCommand}"  Height="35">
+                                <Image Source="/Images/open.png" Width="30" Height="30"/>
+                            </Button>
+                            <Separator/>
+                                <Button Command="{Binding SaveCommand}" Height="35">
+                                    <Image Source="/Images/sava.png" />
+
+                                </Button>
+                            <Separator/>
+                        </ToolBar>
+                        <ToolBar>
+                                <Button Command="{Binding AddCommand}" Width="35">
+                                    <Image Source="/Images/add.jpg" Width="35"/>
+                                </Button>
+                            </ToolBar>
+                        </StackPanel>
+                        <Menu Height="25" VerticalAlignment="Top" Grid.Row="0">
+                            <MenuItem Header="File">
+                                <MenuItem Header="Open..." Command="{Binding OpenCommand}"/>
+                                <MenuItem Header="Save..." Command="{Binding SaveCommand}"/>
+                                <Separator/>
+                                <MenuItem Header="Exit" Click="MenuItem_Click" />
+                            </MenuItem>
+                            <MenuItem Header="Edit"></MenuItem>
+                        </Menu>
+                        <ListBox Grid.Row="2" ItemsSource="{Binding Pensias}" 
+                                 SelectedItem="{Binding SelectedPensia}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDoubleClick">
+                                    <i:InvokeCommandAction
+                                        Command="{Binding DoubleCommand}"
+                                        CommandParameter="{Binding SelectedPensia}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <ListBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Удалить" Command="{Binding DeletePensia}"/>
+                                </ContextMenu>
+                            </ListBox.ContextMenu>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="10" Background="DarkSlateBlue" Margin="5" Width="740">
+                                        <StackPanel Orientation="Horizontal" Margin="5">
+                                           
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding StringFormat=Фамилия: {0},Path=SurName}" FontSize="20" Margin="5" Foreground="White"/>
+                                                <TextBlock Text="{Binding StringFormat=Имя: {0},Path=Name}" FontSize="20" Margin="5" Foreground="White"/>
+                                                <TextBlock Text="{Binding StringFormat=Отчество: {0},Path=LastName}" FontSize="20" Margin="5" Foreground="White"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding StringFormat=Пол:{0},Path=Pol}" FontSize="20" Margin="5" Foreground="White"/>
+                                                <TextBlock Text="{Binding StringFormat=Национальность:{0},Path=National}" FontSize="20" Margin="5" Foreground="White"/>
+                                                <TextBlock Text="{Binding StringFormat=Дата рождения: {0},Path=Date}" FontSize="20" Margin="5" Foreground="White"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding StringFormat=Номер телефона:{0},Path=Phone}" FontSize="20" Margin="5" Foreground="White"/>
+                                                <TextBlock Text="{Binding StringFormat=Домашний адрес:{0},Path=HomeAdress}" FontSize="20" Margin="5" Foreground="White"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <StatusBar x:Name="Status" Grid.Row="3">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding StringFormat=Количество записей:{0},Path=Records}"/>
+                                <Button Content="Очистить"  Command="{Binding ClearCommand}" Margin="5 0"/>
+                            </StackPanel>
+                        </StatusBar>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="lab13">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="3">Лабораторная работа 13</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="9*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <ToolBar>
+                                <Button Command="{Binding OpenCommandBinary}" Width="30" Height="30">
+                                    <Image Source="/Images/open.png" Width="35"/>
+                                </Button>
+                                <Separator/>
+                                <Button Command="{Binding SaveCommandBinary}" Width="30" Height="30">
+                                    <Image Source="/Images/sava.png" Width="30"/>
+                                </Button>
+                                <Separator/>
+                            </ToolBar>
+                            <ToolBar>
+                                <Button Command="{Binding AddCommandBinary}" Width="30" Height="30">
+                                    <Image Source="/Images/add.jpg" Width="35"/>
+                                </Button>
+                            </ToolBar>
+                        </StackPanel>
+                        <Menu Height="25" VerticalAlignment="Top" Grid.Row="0">
+                            <MenuItem Header="File">
+                                <MenuItem Header="Open..." Command="{Binding OpenCommandBinary}"/>
+                                <MenuItem Header="Save..." Command="{Binding SaveCommandBinary}"/>
+                                <Separator/>
+                                <MenuItem Header="Exit" Click="MenuItem_Click" />
+                            </MenuItem>
+                            <MenuItem Header="Edit"></MenuItem>
+                        </Menu>
+                        <ListView Grid.Row="2" ItemsSource="{Binding Punkts}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=NamePunkt}">Название н.п.</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=Chel}" Width="100">Население</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=Rast}" Width="100">Растояние до ближайшейшего почтогого отделения</GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <StatusBar Grid.Row="3">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding StringFormat=Количество записей:{0},Path=RecordsBinary}"/>
+                                <Button Content="Очистить"  Command="{Binding ClearCommandBinary}" Margin="5 0"/>
+                            </StackPanel>
+                        </StatusBar>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
